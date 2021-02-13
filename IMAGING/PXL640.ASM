@@ -1,0 +1,32 @@
+By: Livan
+digunakan di turbo basic
+kegunaan: membuat 1 pixel menyala di screen 640x480
+syntax: PXL640(SEG,X,Y,W)
+
+PUSH BP
+MOV BP,SP
+PUSH DS
+
+LDS SI,[BP+0a]
+LODSW
+MOV DI,AX
+SHL DI,1
+SHL DI,1
+ADD DI,AX
+SHL DI,1
+SHL DI,1
+SHL DI,1
+SHL DI,1
+SHL DI,1
+SHL DI,1
+SHL DI,1
+LDS SI,[BP+0E]
+LODSW
+ADD DI,AX
+LDS SI,[BP+12]
+MOV ES,[SI]
+LDS SI,[BP+06]
+MOVSB
+POP DS
+POP BP
+
